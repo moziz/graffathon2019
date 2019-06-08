@@ -16,10 +16,11 @@ Water water;
 
 void setup()
 {
-  size(640, 360, P3D);
-  //size(1280, 720, P3D);
+  //size(640, 360, P3D);
+  fullScreen(P3D);
+  frameRate(60);
   pixelDensity(displayDensity());
-  //noCursor(); // Ei voi siirtää ikkunaa jos tää on käytössä
+  noCursor(); // Ei voi siirtää ikkunaa jos tää on käytössä
   
   // "random philosophy - more love for all (dark edit)"
   // This track is released under a CC cc-by-nc-sa license.
@@ -82,6 +83,11 @@ void draw()
   if (waterHeight > 0f)
   {
     water.draw(time, beat, waterHeight);
+  }
+  
+  if (moonlander.getValue("exit") == 1.0)
+  {
+    exit();
   }
 }
 

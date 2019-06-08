@@ -2,28 +2,33 @@
 	<tracks>
 		<track name="scene">
 			<key row="0" interpolation="0" value="0"/>
-			<key row="128" interpolation="0" value="2"/>
-			<key row="256" interpolation="0" value="3"/>
-			<key row="384" interpolation="0" value="1"/>
-			<key row="512" interpolation="0" value="0"/>
-			<key row="544" interpolation="0" value="2"/>
-			<key row="576" interpolation="0" value="3"/>
-			<key row="608" interpolation="0" value="1"/>
-			<key row="640" interpolation="0" value="0"/>
-			<key row="656" interpolation="0" value="2"/>
-			<key row="672" interpolation="0" value="3"/>
-			<key row="688" interpolation="0" value="1"/>
+			<key row="32" interpolation="0" value="0"/>
+			<key row="160" interpolation="0" value="2"/>
+			<key row="288" interpolation="0" value="3"/>
+			<key row="416" interpolation="0" value="1"/>
+			<key row="544" interpolation="0" value="0"/>
+			<key row="576" interpolation="0" value="2"/>
+			<key row="608" interpolation="0" value="3"/>
+			<key row="640" interpolation="0" value="1"/>
+			<key row="672" interpolation="0" value="0"/>
+			<key row="688" interpolation="0" value="2"/>
+			<key row="704" interpolation="0" value="3"/>
+			<key row="720" interpolation="0" value="1"/>
 		</track>
-		<track name="x">
-			<key value="0" row="0" interpolation="0"/>
-		</track>
+		<track name="x"/>
 		<track name="beat"/>
 		<track name="waterHeight">
-			<key row="0" interpolation="1" value="2"/>
-			<key row="72" interpolation="0" value="0"/>
-			<key row="648" interpolation="0" value="0"/>
-			<key row="720" interpolation="1" value="0"/>
-			<key row="848" interpolation="0" value="2"/>
+			<key row="0" interpolation="1" value="3"/>
+			<key row="32" interpolation="1" value="2"/>
+			<key row="104" interpolation="0" value="0"/>
+			<key row="680" interpolation="0" value="0"/>
+			<key row="752" interpolation="1" value="0"/>
+			<key row="880" interpolation="0" value="2"/>
+			<key row="896" interpolation="0" value="3"/>
+		</track>
+		<track name="exit">
+			<key row="0" interpolation="0" value="0"/>
+			<key row="944" interpolation="0" value="1"/>
 		</track>
 	</tracks>
 	<bookmarks/>

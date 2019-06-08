@@ -11,7 +11,7 @@ uniform float pulse;
 uniform vec2 screenSize;
 
 
-const int MAX_MARCHING_STEPS = 1000;
+const int MAX_MARCHING_STEPS = 2000;
 const float POS_EPSILON = 0.001f;
 const float NORMAL_EPSILON = 0.01f;
 const float MAX_RAY_LEN = 100.0f;
