@@ -9,7 +9,7 @@ import ddf.minim.ugens.*;
 
 Moonlander moonlander;
 AnnanPallerot annanPallerot;
-
+ KiminJaRikunKotostys  kiminJaRikunKotostys;
 void setup()
 {
   size(1280, 720, P2D);
@@ -21,6 +21,8 @@ void setup()
   
   annanPallerot = new AnnanPallerot();
   annanPallerot.setup();
+  kiminJaRikunKotostys = new KiminJaRikunKotostys();
+  kiminJaRikunKotostys.setup();
 }
 
 void draw()
@@ -32,7 +34,7 @@ void draw()
   scale(height / 1000f);
   
   annanPallerot.draw();
-  
+  kiminJaRikunKotostys.draw();
   fill(100, 100, 100);
   circle(0,0, 500);
 }
