@@ -18,7 +18,7 @@ void setup()
   pixelDensity(displayDensity());
   //noCursor(); // Ei voi siirtää ikkunaa jos tää on käytössä
   
-  moonlander = Moonlander.initWithSoundtrack(this, "tekno_127bpm.mp3", 127, 8);
+  moonlander = Moonlander.initWithSoundtrack(this, "morelove_120bpm.mp3", 120, 8);
   moonlander.start();
   
   annanPallerot = new AnnanPallerot();
