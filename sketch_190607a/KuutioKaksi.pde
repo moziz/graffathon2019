@@ -3,9 +3,10 @@ class KuutioKaksi
   
   PShader blur;
   
-  int unit = 40;
+  int boxSize = height/8;
+  int boxRotation = 3;
   int count = 27;  // 3x3x3
-  BoxModule[] mods;
+  Box[] boxes;
   
   public void setup() {
     // fullScreen(P3D);
@@ -14,17 +15,14 @@ class KuutioKaksi
     
     blur = loadShader("blur.glsl");
     
-    mods = new BoxModule[count];
-    int hei = count / 9;  // Box count for height
-    int wid = count / 9;  // Width
-    int dep = count / 9;  // Depth
-    int index = 0;
-    for (int y = 0; y < hei; y++) {
-      for (int x = 0; x < wid; x++) {
-        for (int z = 0; z < dep; z++) {
-          mods[index++] = new BoxModule(x*unit, y*unit, z*unit,
-                                      unit/3, unit/3, unit/3,
-                                      random(5, 8), unit);
+    boxes = new Box[count];
+    int dim = count / 9;  // Box dimension count. 3 boxes per dimension
+    int i = 0;
+    for (int y = 0; y < dim; y++) {
+      for (int x = 0; x < dim; x++) {
+        for (int z = 0; z < dim; z++) {
+          boxes[i++] = new Box(-(width/5)+x*boxSize, (height)+y*boxSize, z*boxSize,
+                               boxRotation, boxRotation, boxRotation);
         }
       }
     }
@@ -37,62 +35,46 @@ class KuutioKaksi
     // pushMatrix();
     // translate(width/2, height/2, 0);
     
-    rotateY(1.25 * (t / 7));
-    rotateX(-0.4);
+    // rotateY(1.25 * (t / 7));
+    // rotateX(-0.4);
     // box(height);
     
     // popMatrix();
     
-    for (BoxModule mod : mods) {
-      mod.update();
-      mod.display();
+    for (Box box : boxes) {
+      box.update(t, b);
+      // box.display();
+      box(boxSize);
     }
   }
 }
 
-class BoxModule
+class Box
 {
-  int xOffset;
-  int yOffset;
-  int zOffset;
   float x, y, z;
-  int unit;
-  int xDirection = 1;
-  int yDirection = 1;
-  int zDirection = 1;
-  float speed; 
+  float xR, yR, zR;
   
-  // Contructor
-  BoxModule(int xOffsetTemp, int yOffsetTemp, int zOffsetTemp, int xTemp, int yTemp, int zTemp, float speedTemp, int tempUnit) {
-    xOffset = xOffsetTemp;
-    yOffset = yOffsetTemp;
-    zOffset = zOffsetTemp;
-    x = xTemp;
-    y = yTemp;
-    z = zTemp;
-    speed = speedTemp;
-    unit = tempUnit;
+  // Constructor
+  Box(float xOffset,
+      float yOffset,
+      float zOffset,
+      float xRotation,
+      float yRotation,
+      float zRotation) {
+    x = xOffset;
+    y = yOffset;
+    z = zOffset;
+    xR = xRotation;
+    yR = yRotation;
+    zR = zRotation;
   }
   
   // Custom method for updating the variables
-  void update() {
-    x = x + (speed * xDirection);
-    if (x >= unit || x <= 0) {
-      xDirection *= -1;
-      x = x + (1 * xDirection);
-      y = y + (1 * yDirection);
-    }
-    if (y >= unit || y <= 0) {
-      yDirection *= -1;
-      y = y + (1 * yDirection);
-    }
-  }
-  
-  // Custom method for drawing the object
-  void display() {
-    // fill(255);
-    // ellipse(xOffset + x, yOffset + y, 6, 6);
+  void update(float t, float b) {
+    translate(x+t, height/100, z+t);
+    rotateX(0.001*b);
+    rotateY(t/10);
+    // rotateZ(zR*(1+(0.001*b)));
     
-    box(400);
   }
 }
