@@ -40,11 +40,10 @@ void keyPressed()
   }
 }
 
-void draw() 
+void draw(float time) 
 {
-  
-  
   float t = millis() / 1000.0;
+  
   //println("time: " + t);
   blur.set("time", t);
   blur.set("screenSize", 1.77777, 1.0);
