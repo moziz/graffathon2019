@@ -45,8 +45,8 @@ void draw()
   scale(height / 1000f);
   
   double scene = moonlander.getValue("scene");
-  float beat = (float)moonlander.getValue("beat");
   float time = (float)moonlander.getCurrentTime();
+  float beat = beatGenerator(time, 120);
   
   if (scene == 0.0)
   {
@@ -58,6 +58,15 @@ void draw()
   }
   else if (scene == 2.0)
   {
-    kuplaKylpy.draw(time);
+    kuplaKylpy.draw(time, beat);
   }
+}
+
+// Saw tooth beat ramp
+// Returns 1 on beat hit and then linearly falls to 0 before the next beat.
+float beatGenerator(float time, float bpm)
+{
+  float beatInterval = 1f / (bpm / 60f);
+  float v = 1f - (time % beatInterval) / beatInterval;
+  return v;
 }

@@ -33,9 +33,11 @@ void keyPressed()
   }
 }
 
-void draw(float t)
+void draw(float time, float beat)
 {
-  kuplaShader.set("time", t);
+  kuplaShader.set("time", time);
+  kuplaShader.set("beat", beat);
+  
   filter(kuplaShader);
 }
 
