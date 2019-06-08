@@ -10,37 +10,46 @@ int xSpeed = 5;
 int ySpeed = 5;
 int index = 0;
 
-public void setup() {
+
+PShader blur;
+
+void setup() {
+ // size(640, 360, P2D);
+  // Shaders files must be in the "data" folder to load correctly
+  blur = loadShader("blur.glsl"); 
+  stroke(0, 102, 153);
+  rectMode(CENTER);
+}
+
+void keyPressed()
+{
+  if(key == ' ')
+  {
+    try
+    {
+      PShader newShader = loadShader("blur.glsl");
+      if(newShader != null)
+      {
+        blur = newShader;
+      }
+    }
+    catch(RuntimeException e)
+    {
+      print("failed: " + e);
+    }
+  }
+}
+
+void draw() 
+{
   
+  
+  float t = millis() / 1000.0;
+  println("time: " + t);
+  blur.set("time", t);
+  filter(blur);  
+  rect(mouseX-75, mouseY, 150, 150); 
+  ellipse(mouseX+75, mouseY, 150, 150);
 }
 
-public void draw() {
-  background(100, 55, 100);
-  fill(colorRed, colorGreen, colorBlue);
-  noStroke();
-  /*if(index == 5) {
-    stop();
-  }*/
-  for(int i=0; i<=index; i++) {
-    circle(x, y, 50);
-  }
-  x += xSpeed;
-  y += ySpeed;
-  if(x > width-25 || x < 25) {
-    xSpeed *= -1;
-    index++;
-    resetColors();
-  }
-  if(y > height-25 || y < 25) {
-    ySpeed *= -1;
-    index++;
-    resetColors();
-  }
-}
-
-public void resetColors() {
-  colorRed = random(255);
-  colorGreen = random(255);
-  colorBlue = random(255);
-}
 }

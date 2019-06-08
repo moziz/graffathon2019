@@ -25,6 +25,11 @@ void setup()
   kiminJaRikunKotostys.setup();
 }
 
+void keyPressed()
+{
+  kiminJaRikunKotostys.keyPressed();
+}
+
 void draw()
 {
   moonlander.update();
