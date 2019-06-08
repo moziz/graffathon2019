@@ -1,11 +1,12 @@
 class KuutioKaksi
 {
   
-  PShader blur;
+  // PShader blur;
   
-  int boxSize = height/3;
-  int boxRotation = 90;
-  int count = 27;  // 3x3x3
+  float boxSize = height/1.6;
+  int boxRotation = 1;
+  int count = 8;  // 3x3x3
+  int countDiv = 2;  // count/3 = 9
   Box[] boxes;
   
   public void setup() {
@@ -15,10 +16,10 @@ class KuutioKaksi
     
     randomSeed(0);
     
-    blur = loadShader("blur.glsl");
+    // blur = loadShader("blur.glsl");
     
     boxes = new Box[count];
-    int dim = count / 9;  // Box dimension count. 3 boxes per dimension
+    int dim = countDiv;  // Box dimension count. 3 boxes per dimension
     int i = 0;
     for (int y = 0; y < dim; y++) {
       for (int x = 0; x < dim; x++) {
@@ -31,7 +32,7 @@ class KuutioKaksi
   }
   
   public void draw(float t, float b) {
-    filter(blur);
+    // filter(blur);
     
     // noStroke();
     // pushMatrix();
@@ -77,11 +78,14 @@ class Box
   
   // Custom method for updating the variables
   void update(float t, float b) {
-    translate(t*sin((b/((t-1)%2))), 0, 0);
+    translate(0, 0, -t*(b/((t-1)%2)));
     // rotateX(0.0001*b/((t-1)%2));
     rotateX(0);
     rotateY(0);
     rotateZ(zR);
     
+    if (t > 3 && (t-1)%2 < 0.05) {
+      c = color(random(256), random(256), random(256));
+    }
   }
 }
