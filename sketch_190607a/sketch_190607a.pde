@@ -55,14 +55,14 @@ void draw()
   double scene = moonlander.getValue("scene");
   float time = (float)moonlander.getCurrentTime();
   float beat = beatGenerator(time, 120);
-  
+
   if (scene == 0.0)
   {
     annanPallerot.draw();
   }
   else if (scene == 1.0)
   {
-    kiminJaRikunKotostys.draw(time);
+    kiminJaRikunKotostys.draw(time, beat);
   }
   else if (scene == 2.0)
   {

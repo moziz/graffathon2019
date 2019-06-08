@@ -174,7 +174,7 @@ float boxes(vec3 pos)
     dist = min(dist, boxShape3(pos - vec3(-6.0f, 2.0f, -5.0f)));
     dist = min(dist, boxShape4(pos - vec3(-6.0f, 2.0f, -5.0f)));
 
-    dist = boxShape1(pos);
+    dist = min(dist, boxShape1(pos));
     dist = min(dist, boxShape2(pos - vec3(6.0f, 2.0f, 20.0f)));
     dist = min(dist, boxShape3(pos - vec3(6.0f, 2.0f, 20.0f)));
     dist = min(dist, boxShape4(pos - vec3(6.0f, 2.0f, 20.0f)));

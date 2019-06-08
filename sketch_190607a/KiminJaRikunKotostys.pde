@@ -40,12 +40,13 @@ void keyPressed()
   }
 }
 
-void draw(float time)
+void draw(float time, float beat)
 {
   float t = millis() / 1000.0;
   
   //println("time: " + t);
-  blur.set("time", t);
+  blur.set("time", time);
+  blur.set("pulse", beat);
   blur.set("screenSize", 1.77777, 1.0);
   filter(blur);
 }
