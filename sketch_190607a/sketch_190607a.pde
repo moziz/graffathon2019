@@ -15,7 +15,7 @@ void setup()
 {
   size(1280, 720, P2D);
   pixelDensity(displayDensity());
-  noCursor();
+  //noCursor(); // Ei voi siirtää ikkunaa jos tää on käytössä
   
   moonlander = Moonlander.initWithSoundtrack(this, "tekno_127bpm.mp3", 127, 8);
   moonlander.start();
