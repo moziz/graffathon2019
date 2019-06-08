@@ -1,16 +1,17 @@
 <sync rows="1024">
 	<tracks>
 		<track name="scene">
-			<key interpolation="0" row="0" value="0"/>
-			<key interpolation="0" row="32" value="1"/>
-			<key interpolation="0" row="48" value="2"/>
-			<key interpolation="0" row="64" value="0"/>
-			<key interpolation="0" row="80" value="1"/>
-			<key interpolation="0" row="96" value="0"/>
-			<key interpolation="0" row="120" value="2"/>
+			<key interpolation="0" value="0" row="0"/>
+			<key interpolation="0" value="1" row="32"/>
+			<key interpolation="0" value="2" row="48"/>
+			<key interpolation="0" value="0" row="64"/>
+			<key interpolation="0" value="1" row="80"/>
+			<key interpolation="0" value="0" row="96"/>
+			<key interpolation="0" value="2" row="120"/>
+			<key interpolation="0" value="3" row="160"/>
 		</track>
 		<track name="x">
-			<key interpolation="0" row="0" value="0"/>
+			<key interpolation="0" value="0" row="0"/>
 		</track>
 		<track name="beat"/>
 	</tracks>

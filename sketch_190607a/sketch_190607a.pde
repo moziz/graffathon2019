@@ -11,10 +11,12 @@ Moonlander moonlander;
 AnnanPallerot annanPallerot;
 KiminJaRikunKotostys  kiminJaRikunKotostys;
 KuplaKylpy kuplaKylpy;
+KuutioKaksi kuutioKaksi;
 
 void setup()
 {
-  size(640, 360, P2D);
+  //size(640, 360, P2D);
+  size(1280, 720, P3D);
   pixelDensity(displayDensity());
   //noCursor(); // Ei voi siirtää ikkunaa jos tää on käytössä
   
@@ -29,6 +31,9 @@ void setup()
   
   kuplaKylpy = new KuplaKylpy();
   kuplaKylpy.setup();
+  
+  kuutioKaksi = new KuutioKaksi();
+  kuutioKaksi.setup();
 }
 
 void keyPressed()
@@ -60,6 +65,11 @@ void draw()
   else if (scene == 2.0)
   {
     kuplaKylpy.draw(time, beat);
+  }
+  else if (scene == 3.0)
+  {
+    kuplaKylpy.draw(time, beat);
+    kuutioKaksi.draw(time);
   }
 }
 
