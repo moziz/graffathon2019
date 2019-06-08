@@ -68,8 +68,8 @@ void draw()
   }
   else if (scene == 3.0)
   {
-    kuplaKylpy.draw(time, beat);
     kuutioKaksi.draw(time);
+    kuplaKylpy.draw(time, beat);
   }
 }
 
