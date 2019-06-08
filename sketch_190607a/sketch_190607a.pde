@@ -24,7 +24,7 @@ void setup()
   
   // "random philosophy - more love for all (dark edit)"
   // This track is released under a CC cc-by-nc-sa license.
-  moonlander = Moonlander.initWithSoundtrack(this, "morelove_120bpm.mp3", 120, 8);
+  moonlander = Moonlander.initWithSoundtrack(this, "morelove_edit_120bpm.wav", 120, 8);
   moonlander.start();
   
   annanPallerot = new AnnanPallerot();
