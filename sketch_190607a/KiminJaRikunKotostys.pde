@@ -40,7 +40,7 @@ void keyPressed()
   }
 }
 
-void draw(float time) 
+void draw(float time)
 {
   float t = millis() / 1000.0;
   

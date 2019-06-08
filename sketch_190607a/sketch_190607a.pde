@@ -34,6 +34,7 @@ void setup()
 void keyPressed()
 {
   kiminJaRikunKotostys.keyPressed();
+  kuplaKylpy.keyPressed();
 }
 
 void draw()
