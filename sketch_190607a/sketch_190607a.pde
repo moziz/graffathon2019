@@ -42,11 +42,11 @@ void draw()
   double scene = moonlander.getValue("scene");
   float beat = (float)moonlander.getValue("beat");
   
-  if (scene == 0.0)
-  {
-    annanPallerot.draw();
-  }
-  else if (scene == 1.0)
+  //if (scene == 0.0)
+  //{
+  //  annanPallerot.draw();
+  //}
+  //else if (scene == 1.0)
   {
     kiminJaRikunKotostys.draw();
   }

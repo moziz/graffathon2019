@@ -47,9 +47,8 @@ void draw()
   float t = millis() / 1000.0;
   //println("time: " + t);
   blur.set("time", t);
-  filter(blur);  
-  rect(mouseX-75, mouseY, 150, 150); 
-  ellipse(mouseX+75, mouseY, 150, 150);
+  blur.set("screenSize", 1.77777, 1.0);
+  filter(blur);
 }
 
 }
