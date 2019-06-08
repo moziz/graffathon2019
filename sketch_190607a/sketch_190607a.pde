@@ -54,7 +54,7 @@ void draw()
   }
   else if (scene == 1.0)
   {
-    kiminJaRikunKotostys.draw();
+    kiminJaRikunKotostys.draw(time);
   }
   else if (scene == 2.0)
   {

@@ -40,11 +40,10 @@ void keyPressed()
   }
 }
 
-void draw() 
+void draw(float time) 
 {
-  
-  
   float t = millis() / 1000.0;
+  
   //println("time: " + t);
   blur.set("time", t);
   filter(blur);  
