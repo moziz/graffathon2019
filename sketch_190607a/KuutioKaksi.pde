@@ -38,9 +38,11 @@ class KuutioKaksi
     // pushMatrix();
     // translate(width/2, height/2, 0);
     
-    // rotateY(1.25 * (t / 7));
-    // rotateX(-0.4);
-    // box(height);
+    rotateX(-0.4 * sin(t));
+    rotateY(1.25 * (sin(t) / 7));
+    rotateZ(t/6);
+    // fill(0, 0, 0);
+    // box(height/4.8, height/4.8, height/1.5);
     
     // popMatrix();
     
