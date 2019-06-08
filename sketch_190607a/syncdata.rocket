@@ -1,15 +1,30 @@
 <sync rows="1024">
 	<tracks>
 		<track name="scene">
-			<key value="0" row="0" interpolation="0"/>
-			<key value="1" row="48" interpolation="0"/>
-			<key value="2" row="96" interpolation="0"/>
-			<key value="3" row="160" interpolation="0"/>
+			<key row="0" interpolation="0" value="0"/>
+			<key row="128" interpolation="0" value="2"/>
+			<key row="256" interpolation="0" value="3"/>
+			<key row="384" interpolation="0" value="1"/>
+			<key row="512" interpolation="0" value="0"/>
+			<key row="544" interpolation="0" value="2"/>
+			<key row="576" interpolation="0" value="3"/>
+			<key row="608" interpolation="0" value="1"/>
+			<key row="640" interpolation="0" value="0"/>
+			<key row="656" interpolation="0" value="2"/>
+			<key row="672" interpolation="0" value="3"/>
+			<key row="688" interpolation="0" value="1"/>
 		</track>
 		<track name="x">
 			<key value="0" row="0" interpolation="0"/>
 		</track>
 		<track name="beat"/>
+		<track name="waterHeight">
+			<key row="0" interpolation="1" value="2"/>
+			<key row="72" interpolation="0" value="0"/>
+			<key row="648" interpolation="0" value="0"/>
+			<key row="720" interpolation="1" value="0"/>
+			<key row="848" interpolation="0" value="2"/>
+		</track>
 	</tracks>
 	<bookmarks/>
 </sync>

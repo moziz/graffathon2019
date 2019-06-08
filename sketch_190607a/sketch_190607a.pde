@@ -12,11 +12,12 @@ AnnanPallerot annanPallerot;
 KiminJaRikunKotostys  kiminJaRikunKotostys;
 KuplaKylpy kuplaKylpy;
 KuutioKaksi kuutioKaksi;
+Water water;
 
 void setup()
 {
-  //size(640, 360, P2D);
-  size(1280, 720, P3D);
+  size(640, 360, P3D);
+  //size(1280, 720, P3D);
   pixelDensity(displayDensity());
   //noCursor(); // Ei voi siirtää ikkunaa jos tää on käytössä
   
@@ -36,12 +37,16 @@ void setup()
   
   kuutioKaksi = new KuutioKaksi();
   kuutioKaksi.setup();
+  
+  water = new Water();
+  water.setup();
 }
 
 void keyPressed()
 {
   kiminJaRikunKotostys.keyPressed();
   kuplaKylpy.keyPressed();
+  water.keyPressed();
 }
 
 void draw()
@@ -55,6 +60,7 @@ void draw()
   double scene = moonlander.getValue("scene");
   float time = (float)moonlander.getCurrentTime();
   float beat = beatGenerator(time, 120);
+  float waterHeight = (float)moonlander.getValue("waterHeight");
 
   if (scene == 0.0)
   {
@@ -71,6 +77,11 @@ void draw()
   else if (scene == 3.0)
   {
     kuutioKaksi.draw(time, beat);
+  }
+  
+  if (waterHeight > 0f)
+  {
+    water.draw(time, beat, waterHeight);
   }
 }
 
