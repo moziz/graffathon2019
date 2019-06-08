@@ -48,11 +48,11 @@ void draw()
   float time = (float)moonlander.getCurrentTime();
   float beat = beatGenerator(time, 120);
   
-  //if (scene == 0.0)
-  //{
-  //  annanPallerot.draw();
-  //}
-  //else if (scene == 1.0)
+  if (scene == 0.0)
+  {
+    annanPallerot.draw();
+  }
+  else if (scene == 1.0)
   {
     kiminJaRikunKotostys.draw(time);
   }
