@@ -9,7 +9,8 @@ import ddf.minim.ugens.*;
 
 Moonlander moonlander;
 AnnanPallerot annanPallerot;
- KiminJaRikunKotostys  kiminJaRikunKotostys;
+KiminJaRikunKotostys  kiminJaRikunKotostys;
+
 void setup()
 {
   size(1280, 720, P2D);
@@ -33,8 +34,18 @@ void draw()
   translate(width / 2, height / 2);
   scale(height / 1000f);
   
-  annanPallerot.draw();
-  kiminJaRikunKotostys.draw();
+  double scene = moonlander.getValue("scene");
+  float beat = (float)moonlander.getValue("beat");
+  
+  if (scene == 0.0)
+  {
+    annanPallerot.draw();
+  }
+  else if (scene == 1.0)
+  {
+    kiminJaRikunKotostys.draw();
+  }
+  
   fill(100, 100, 100);
-  circle(0,0, 500);
+  circle(0,0, 500f * beat);
 }

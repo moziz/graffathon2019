@@ -1,8 +1,12 @@
 <sync rows="128">
 	<tracks>
+		<track name="scene">
+			<key interpolation="0" row="0" value="0"/>
+			<key interpolation="0" row="32" value="1"/>
+		</track>
 		<track name="x">
-			<key value="0" interpolation="1" row="0"/>
-			<key value="600" interpolation="0" row="127"/>
+			<key interpolation="1" row="0" value="0"/>
+			<key interpolation="0" row="127" value="600"/>
 		</track>
 	</tracks>
 	<bookmarks/>

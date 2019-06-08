@@ -15,7 +15,7 @@ public void setup() {
 }
 
 public void draw() {
-  background(100, 55, 100);
+  background(100, 20, 100);
   fill(colorRed, colorGreen, colorBlue);
   noStroke();
   /*if(index == 5) {
