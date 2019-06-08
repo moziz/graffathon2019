@@ -3,8 +3,8 @@ class KuutioKaksi
   
   PShader blur;
   
-  int boxSize = height/8;
-  int boxRotation = 3;
+  int boxSize = height/3;
+  int boxRotation = 90;
   int count = 27;  // 3x3x3
   Box[] boxes;
   
@@ -12,6 +12,8 @@ class KuutioKaksi
     // fullScreen(P3D);
     // background(#F8F8FF);  // Ghost white (248,248,255)
     // lights();
+    
+    randomSeed(0);
     
     blur = loadShader("blur.glsl");
     
@@ -44,6 +46,7 @@ class KuutioKaksi
     for (Box box : boxes) {
       box.update(t, b);
       // box.display();
+      fill(box.c);
       box(boxSize);
     }
   }
@@ -53,6 +56,7 @@ class Box
 {
   float x, y, z;
   float xR, yR, zR;
+  color c;
   
   // Constructor
   Box(float xOffset,
@@ -67,14 +71,17 @@ class Box
     xR = xRotation;
     yR = yRotation;
     zR = zRotation;
+    
+    c = color(random(256), random(256), random(256));
   }
   
   // Custom method for updating the variables
   void update(float t, float b) {
-    translate(x+t, height/100, z+t);
-    rotateX(0.001*b);
-    rotateY(t/10);
-    // rotateZ(zR*(1+(0.001*b)));
+    translate(t*sin((b/((t-1)%2))), 0, 0);
+    // rotateX(0.0001*b/((t-1)%2));
+    rotateX(0);
+    rotateY(0);
+    rotateZ(zR);
     
   }
 }
