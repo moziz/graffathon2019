@@ -13,7 +13,7 @@ KiminJaRikunKotostys  kiminJaRikunKotostys;
 
 void setup()
 {
-  size(1280, 720, P2D);
+  size(640, 360, P2D);
   pixelDensity(displayDensity());
   //noCursor(); // Ei voi siirtää ikkunaa jos tää on käytössä
   
