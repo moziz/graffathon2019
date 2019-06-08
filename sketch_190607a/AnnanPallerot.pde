@@ -4,11 +4,13 @@ float colorRed;
 float colorGreen;
 float colorBlue;
 
-int x = width/2;
-int y = height/2;
-int xSpeed = 5;
-int ySpeed = 5;
-int index = 0;
+float w = 1778 * 0.6;
+float h = 1000 * 0.6;
+float x = 0;
+float y = 0;
+float xSpeed = 0.05f;
+float ySpeed = 0.051f;
+int ballCount = 100;
 
 public void setup() {
   
@@ -18,23 +20,25 @@ public void draw() {
   background(100, 55, 100);
   fill(colorRed, colorGreen, colorBlue);
   noStroke();
-  /*if(index == 5) {
-    stop();
-  }*/
-  for(int i=0; i<=index; i++) {
-    circle(x, y, 50);
-  }
-  x += xSpeed;
-  y += ySpeed;
-  if(x > width-25 || x < 25) {
-    xSpeed *= -1;
-    index++;
-    resetColors();
-  }
-  if(y > height-25 || y < 25) {
-    ySpeed *= -1;
-    index++;
-    resetColors();
+  
+  //println("w: " + width + " h: " + height);
+  //println("x: " + x + " y: " + y);
+  
+  for(int i = 0; i < ballCount; i++) {
+    circle(x * w - w / 2, y * h - h / 2, h * 0.0625);
+  
+    x += xSpeed;
+    y += ySpeed;
+    
+    if(x > 1f || x < 0f) {
+      xSpeed *= -1;
+      resetColors();
+    }
+    
+    if(y > 1f || y < 0f) {
+      ySpeed *= -1;
+      resetColors();
+    }
   }
 }
 
