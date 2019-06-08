@@ -20,6 +20,8 @@ void setup()
   pixelDensity(displayDensity());
   //noCursor(); // Ei voi siirtää ikkunaa jos tää on käytössä
   
+  // "random philosophy - more love for all (dark edit)"
+  // This track is released under a CC cc-by-nc-sa license.
   moonlander = Moonlander.initWithSoundtrack(this, "morelove_120bpm.mp3", 120, 8);
   moonlander.start();
   
