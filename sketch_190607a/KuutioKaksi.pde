@@ -3,7 +3,10 @@ class KuutioKaksi
   
   // PShader blur;
   
-  float boxSize = height/1.6;
+  float w = 1778 * 0.8;
+  float h = 1000 * 0.8;
+  
+  float boxSize = h/1.6;
   int boxRotation = 1;
   int count = 8;  // 3x3x3
   int countDiv = 2;  // count/3 = 9
@@ -24,7 +27,7 @@ class KuutioKaksi
     for (int y = 0; y < dim; y++) {
       for (int x = 0; x < dim; x++) {
         for (int z = 0; z < dim; z++) {
-          boxes[i++] = new Box(-(width/5)+x*boxSize, (height)+y*boxSize, z*boxSize,
+          boxes[i++] = new Box(-(w/5)+x*boxSize, (h)+y*boxSize, z*boxSize,
                                boxRotation, boxRotation, boxRotation);
         }
       }
@@ -36,13 +39,13 @@ class KuutioKaksi
     
     // noStroke();
     // pushMatrix();
-    // translate(width/2, height/2, 0);
+    // translate(w/2, h/2, 0);
     
     rotateX(-0.4 * sin(t));
     rotateY(1.25 * (sin(t) / 7));
     rotateZ(t/6);
     // fill(0, 0, 0);
-    // box(height/4.8, height/4.8, height/1.5);
+    // box(h/4.8, h/4.8, h/1.5);
     
     // popMatrix();
     
