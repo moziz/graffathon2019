@@ -10,6 +10,7 @@ import ddf.minim.ugens.*;
 Moonlander moonlander;
 AnnanPallerot annanPallerot;
 KiminJaRikunKotostys  kiminJaRikunKotostys;
+KuplaKylpy kuplaKylpy;
 
 void setup()
 {
@@ -22,8 +23,12 @@ void setup()
   
   annanPallerot = new AnnanPallerot();
   annanPallerot.setup();
+  
   kiminJaRikunKotostys = new KiminJaRikunKotostys();
   kiminJaRikunKotostys.setup();
+  
+  kuplaKylpy = new KuplaKylpy();
+  kuplaKylpy.setup();
 }
 
 void keyPressed()
@@ -41,6 +46,7 @@ void draw()
   
   double scene = moonlander.getValue("scene");
   float beat = (float)moonlander.getValue("beat");
+  float time = (float)moonlander.getCurrentTime();
   
   if (scene == 0.0)
   {
@@ -50,7 +56,8 @@ void draw()
   {
     kiminJaRikunKotostys.draw();
   }
-  
-  fill(100, 100, 100);
-  circle(0,0, 500f * beat);
+  else if (scene == 2.0)
+  {
+    kuplaKylpy.draw(time);
+  }
 }

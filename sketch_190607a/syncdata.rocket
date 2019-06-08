@@ -3,6 +3,7 @@
 		<track name="scene">
 			<key interpolation="0" row="0" value="0"/>
 			<key interpolation="0" row="32" value="1"/>
+			<key interpolation="0" row="48" value="2"/>
 		</track>
 		<track name="x">
 			<key interpolation="0" row="0" value="0"/>
