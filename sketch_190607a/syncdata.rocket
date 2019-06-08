@@ -4,7 +4,7 @@
 			<key interpolation="0" row="0" value="0"/>
 			<key interpolation="0" row="32" value="1"/>
 			<key interpolation="0" row="48" value="2"/>
-			<key interpolation="0" row="64" value="2"/>
+			<key interpolation="0" row="64" value="0"/>
 			<key interpolation="0" row="80" value="1"/>
 			<key interpolation="0" row="96" value="0"/>
 			<key interpolation="0" row="120" value="2"/>
@@ -12,25 +12,7 @@
 		<track name="x">
 			<key interpolation="0" row="0" value="0"/>
 		</track>
-		<track name="beat">
-			<key interpolation="3" row="0" value="1"/>
-			<key interpolation="0" row="7" value="0"/>
-			<key interpolation="3" row="8" value="1"/>
-			<key interpolation="0" row="15" value="0"/>
-			<key interpolation="3" row="16" value="1"/>
-			<key interpolation="0" row="23" value="0"/>
-			<key interpolation="3" row="24" value="1"/>
-			<key interpolation="0" row="31" value="0"/>
-			<key interpolation="3" row="32" value="1"/>
-			<key interpolation="0" row="39" value="0"/>
-			<key interpolation="3" row="40" value="1"/>
-			<key interpolation="0" row="47" value="0"/>
-			<key interpolation="3" row="48" value="1"/>
-			<key interpolation="0" row="55" value="0"/>
-			<key interpolation="3" row="56" value="1"/>
-			<key interpolation="0" row="63" value="0"/>
-			<key interpolation="0" row="64" value="1"/>
-		</track>
+		<track name="beat"/>
 	</tracks>
 	<bookmarks/>
 </sync>
