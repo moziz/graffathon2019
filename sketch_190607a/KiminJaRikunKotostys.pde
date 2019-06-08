@@ -45,7 +45,7 @@ void draw()
   
   
   float t = millis() / 1000.0;
-  println("time: " + t);
+  //println("time: " + t);
   blur.set("time", t);
   filter(blur);  
   rect(mouseX-75, mouseY, 150, 150); 
