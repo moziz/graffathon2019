@@ -13,7 +13,7 @@ void setup()
 {
   size(640,480,P2D);
   
-  moonlander = Moonlander.initWithSoundtrack(this, "mysic.wav", 140, 8);
+  moonlander = Moonlander.initWithSoundtrack(this, "tekno_127bpm.mp3", 127, 8);
   moonlander.start();
 }
 
